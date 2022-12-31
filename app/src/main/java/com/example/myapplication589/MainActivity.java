@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 // Amir.HSD
 public class MainActivity extends AppCompatActivity {
-    // امیرحسین موسویان
+    // Amir.HSD
     private Button mButton;
     private EditText mText, mText2;
     private TextView mTextView;
