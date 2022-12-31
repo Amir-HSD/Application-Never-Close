@@ -1,5 +1,5 @@
 package com.example.myapplication589;
-// امیرحسین موسویان
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.PendingIntent;
@@ -13,42 +13,42 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-// امیرحسین موسویان
+// Amir.HSD
 public class MainActivity extends AppCompatActivity {
     // امیرحسین موسویان
     private Button mButton;
     private EditText mText, mText2;
     private TextView mTextView;
-    // امیرحسین موسویان
+    // Amir.HSD
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        if(Build.VERSION.SDK_INT > 11 && Build.VERSION.SDK_INT < 19) { // lower api
+        // Amir.HSD
+        if(Build.VERSION.SDK_INT > 11 && Build.VERSION.SDK_INT < 19) {
             View v = this.getWindow().getDecorView();
             v.setSystemUiVisibility(View.GONE);
         } else if(Build.VERSION.SDK_INT >= 19) {
-            //for new api versions.
+            // Amir.HSD
             View decorView = getWindow().getDecorView();
             int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
             decorView.setSystemUiVisibility(uiOptions);
         }
-
+        // Amir.HSD
         Intent service = new Intent(getApplicationContext(), MyService.class);
         startService(service);
-
+        // Amir.HSD
         mButton = findViewById(R.id.button2);
         mText = findViewById(R.id.editTextTextPersonName2);
         mText2 = findViewById(R.id.editTextTextPersonName);
         mTextView = findViewById(R.id.textView3);
-
+        // Amir.HSD
         mText2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+            // Amir.HSD
             }
-
+            // Amir.HSD
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 String Get_Text = mText2.getText().toString();
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mButton.setOnClickListener(new View.OnClickListener() {
-            // امیرحسین موسویان
+            // Amir.HSD 
             @Override
             public void onClick(View view)
             {
@@ -78,12 +78,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    // امیرحسین موسویان
+    // Amir.HSD
     public void onBackPressed() {
         Toast.makeText(getApplicationContext(),"برنامه بسته نمیشه عزیزم",Toast.LENGTH_SHORT).show();
         return;
     }
-    // امیرحسین موسویان
+    // Amir.HSD
     @Override
     protected void onPause() {
 
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-    // امیرحسین موسویان
+    // Amir.HSD
     @Override
     protected void onDestroy() {
         Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.example.myapplication589");
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
             super.onDestroy();
         }
     }
-    // امیرحسین موسویان
+    // Amir.HSD
     @Override
     protected void onUserLeaveHint() {
         Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.example.myapplication589");
